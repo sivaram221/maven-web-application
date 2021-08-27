@@ -14,6 +14,8 @@ stage('Build')
 stage('sonarqubereport'){
 sh "${mavenHome}/bin/mvn clean sonar:sonar"    
 }
+ 
+ 
 
 stage('uploadartifactintonexus'){
 sh "${mavenHome}/bin/mvn clean deploy "
@@ -25,6 +27,8 @@ sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@65
 }    
 
 }
+
+
 
 stage('sendemailnotification'){
 emailext body: '''Build is completed..!!
