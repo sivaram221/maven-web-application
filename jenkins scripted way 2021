@@ -1,12 +1,6 @@
 node{
     
-    properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: '']])
-    
-    properties([[$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([pollSCM('')])])
-    
-    properties([[$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([cron('* * * * *')])])
-    
-    properties([[$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([githubPush()])])
+    properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: '']]), pipelineTriggers([pollSCM('')])]), pipelineTriggers([cron('* * * * *')])]), pipelineTriggers([githubPush()])])
     
     def mavenHome = tool name:"maven3.8.2"
     
