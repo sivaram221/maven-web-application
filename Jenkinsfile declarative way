@@ -1,10 +1,10 @@
 pipeline{
     
-    agent any
+    agent{
     
     /*
     agent{
-    label "nodename"    
+    label "nodes"    
     }
     */
     
