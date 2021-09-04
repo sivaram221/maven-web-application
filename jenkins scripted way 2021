@@ -16,6 +16,7 @@ node('nodes'){
         sh "${mavenHome}/bin/mvn clean package"
     }
     
+    /*
     
     
     stage('sonarqubereport'){
@@ -43,3 +44,4 @@ Siva Ram''', subject: 'Build over..!!', to: 'sivaram.0341@gmail.com'
     
 }
 
+*/
